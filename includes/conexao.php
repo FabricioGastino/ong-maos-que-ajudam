@@ -1,13 +1,10 @@
 <?php
-// ============================================
-// includes/conexao.php
-// Configuração da conexão com o banco
-// ============================================
 
-define('DB_HOST', 'localhost');     // No InfinityFree: mude para o host deles
-define('DB_USER', 'root');          // No InfinityFree: seu usuário MySQL
-define('DB_PASS', '');              // No InfinityFree: sua senha MySQL
-define('DB_NAME', 'ong_doacoes');   // No InfinityFree: nome do banco criado lá
+
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');          
+define('DB_PASS', '');            
+define('DB_NAME', 'ong_doacoes');
 
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
