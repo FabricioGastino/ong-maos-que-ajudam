@@ -1,14 +1,11 @@
 <?php
-// dashboard.php - Painel de Controle
 require_once 'includes/auth.php';
 require_once 'includes/conexao.php';
 
-// Estatísticas
 $total_doacoes = $conn->query("SELECT COUNT(*) as total FROM doacoes")->fetch_assoc()['total'];
 $total_itens   = $conn->query("SELECT SUM(quantidade) as total FROM doacoes")->fetch_assoc()['total'] ?? 0;
 $total_usuarios = $conn->query("SELECT COUNT(*) as total FROM usuarios")->fetch_assoc()['total'];
 
-// Últimas doações
 $ultimas = $conn->query("SELECT * FROM doacoes ORDER BY criado_em DESC LIMIT 5");
 ?>
 <!DOCTYPE html>
