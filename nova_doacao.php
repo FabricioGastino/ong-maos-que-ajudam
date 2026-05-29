@@ -1,5 +1,4 @@
 <?php
-// nova_doacao.php - Cadastro de Doação
 require_once 'includes/auth.php';
 require_once 'includes/conexao.php';
 
@@ -39,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark navbar-ong">
     <div class="container">
         <a class="navbar-brand" href="index.php">
