@@ -1,8 +1,4 @@
 <?php
-// ============================================
-// includes/auth.php
-// Verifica se o usuário está logado
-// ============================================
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
