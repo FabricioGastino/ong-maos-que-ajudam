@@ -1,12 +1,10 @@
 <?php
-// listar_doacoes.php - Lista de Doações com CRUD completo
 require_once 'includes/auth.php';
 require_once 'includes/conexao.php';
 
 $mensagem = '';
 $tipo_msg = '';
 
-// DELETAR
 if (isset($_GET['deletar'])) {
     $id = intval($_GET['deletar']);
     $stmt = $conn->prepare("DELETE FROM doacoes WHERE id = ?");
@@ -20,7 +18,6 @@ if (isset($_GET['deletar'])) {
     }
 }
 
-// EDITAR - salvar
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['editar_id'])) {
     $id         = intval($_POST['editar_id']);
     $item       = trim($_POST['item']);
@@ -38,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['editar_id'])) {
     }
 }
 
-// Buscar doações
 $busca = trim($_GET['busca'] ?? '');
 if ($busca !== '') {
     $b = "%$busca%";
@@ -50,7 +46,6 @@ if ($busca !== '') {
     $doacoes = $conn->query("SELECT * FROM doacoes ORDER BY criado_em DESC");
 }
 
-// Dados para edição
 $editar = null;
 if (isset($_GET['editar'])) {
     $id = intval($_GET['editar']);
@@ -72,7 +67,6 @@ if (isset($_GET['editar'])) {
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark navbar-ong">
     <div class="container">
         <a class="navbar-brand" href="index.php">
@@ -94,7 +88,6 @@ if (isset($_GET['editar'])) {
 
 <div class="container py-5">
 
-    <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="mb-3">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="dashboard.php" style="color: var(--verde)">Dashboard</a></li>
@@ -119,7 +112,6 @@ if (isset($_GET['editar'])) {
         </div>
     <?php endif; ?>
 
-    <!-- Modal de Edição -->
     <?php if ($editar): ?>
     <div class="card card-ong mb-4" id="form-editar">
         <div class="card-header-ong">
@@ -155,7 +147,6 @@ if (isset($_GET['editar'])) {
     </div>
     <?php endif; ?>
 
-    <!-- Busca -->
     <div class="card card-ong mb-4">
         <div class="card-body py-3">
             <form method="GET" action="" class="d-flex gap-2">
@@ -173,7 +164,6 @@ if (isset($_GET['editar'])) {
         </div>
     </div>
 
-    <!-- Tabela -->
     <div class="card card-ong">
         <div class="card-body p-0">
             <?php if ($doacoes->num_rows > 0): ?>
