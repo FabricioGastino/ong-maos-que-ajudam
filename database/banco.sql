@@ -1,13 +1,7 @@
--- ============================================
--- Sistema de Cadastro para ONG
--- Banco de Dados
--- ============================================
-
 CREATE DATABASE IF NOT EXISTS ong_doacoes CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE ong_doacoes;
 
--- Tabela de Usuários
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -16,7 +10,6 @@ CREATE TABLE IF NOT EXISTS usuarios (
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tabela de Doações
 CREATE TABLE IF NOT EXISTS doacoes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT,
