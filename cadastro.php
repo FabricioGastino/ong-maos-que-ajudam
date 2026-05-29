@@ -1,5 +1,4 @@
 <?php
-// cadastro.php - Cadastro de Usuário
 if (session_status() === PHP_SESSION_NONE) session_start();
 
 if (isset($_SESSION['usuario_id'])) {
@@ -27,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($senha !== $confirmar) {
         $erro = 'As senhas não coincidem.';
     } else {
-        // Verificar se email já existe
         $stmt = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
