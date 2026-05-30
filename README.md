@@ -91,26 +91,6 @@ CREATE TABLE doacoes (
 
 ---
 
-## 🌐 Como Hospedar no InfinityFree
-
-1. Crie uma conta em [https://infinityfree.com](https://infinityfree.com)
-2. Crie um novo site no painel
-3. Acesse o **MySQL Database** e crie um banco
-4. Importe o `banco.sql` via phpMyAdmin do InfinityFree
-5. Edite `includes/conexao.php` com os dados fornecidos pelo InfinityFree:
-   ```php
-   define('DB_HOST', 'sql_host_aqui');
-   define('DB_USER', 'usuario_aqui');
-   define('DB_PASS', 'senha_aqui');
-   define('DB_NAME', 'nome_banco_aqui');
-   ```
-6. Envie os arquivos via **File Manager** ou **FTP (FileZilla)**
-7. Acesse pelo domínio fornecido
-
----
-
-## 👨‍💻 Desenvolvido por
-
 Projeto acadêmico — Tecnologia em Análise e Desenvolvimento de Sistemas
 
 ---
