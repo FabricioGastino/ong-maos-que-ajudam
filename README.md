@@ -23,7 +23,6 @@ Sistema web desenvolvido para controle de doações recebidas por uma ONG. Proje
 | Front-end | HTML5, CSS3, Bootstrap 5, Bootstrap Icons |
 | Back-end | PHP 8+ |
 | Banco de dados | MySQL |
-| Hospedagem | InfinityFree |
 
 ---
 
